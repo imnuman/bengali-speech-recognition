@@ -1,0 +1,22 @@
+# Bengali Speech Recognition - Requirements
+
+# Core dependencies
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy>=1.24.0
+
+# Audio processing
+pyaudio>=0.2.13
+soundfile>=0.12.0
+librosa>=0.10.0
+
+# Speech recognition
+transformers>=4.30.0
+datasets>=2.14.0
+
+# Utilities
+pyyaml>=6.0
+tqdm>=4.65.0
+
+# Testing
+pytest>=7.4.0
