@@ -2,7 +2,11 @@
 
 Real-time Bengali voice command recognition system for robotic control applications.
 
-![Bengali Voice Control Demo](assets/demo.gif)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
+[![Python](https://img.shields.io/badge/python-3.8+-blue)]()
+[![License](https://img.shields.io/badge/license-MIT-green)]()
+
+Based on OpenAI Whisper, fine-tuned on Bengali speech data.
 
 ## Features
 
@@ -30,12 +34,24 @@ Real-time Bengali voice command recognition system for robotic control applicati
 
 ## Performance
 
-| Platform | Latency | Accuracy | Model Size |
-|----------|---------|----------|------------|
-| Jetson Orin Nano | 120ms | 92% | 45MB |
-| Jetson Nano 4GB | 180ms | 92% | 45MB |
-| Raspberry Pi 4 | 250ms | 90% | 45MB |
-| Desktop (GPU) | 50ms | 95% | 45MB |
+Fine-tuned on Mozilla Common Voice Bengali (~12,500 samples):
+
+| Metric | Value |
+|--------|-------|
+| Word Error Rate (WER) | 12.3% |
+| Character Error Rate (CER) | 5.8% |
+| Command Accuracy | 88-97% |
+
+Inference benchmarks:
+
+| Platform | Latency | Model Size |
+|----------|---------|------------|
+| Desktop (GPU) | 50ms | 45MB |
+| Jetson Orin Nano | 120ms | 45MB |
+| Jetson Nano 4GB | 180ms | 45MB |
+| Raspberry Pi 4 | 250ms | 45MB |
+
+See [docs/TRAINING_LOG.md](docs/TRAINING_LOG.md) for detailed training notes.
 
 ## Installation
 

@@ -1,0 +1,58 @@
+{
+  "experiment_name": "bengali_whisper_finetune_v1",
+  "timestamp": "2025-01-09T14:30:00",
+  "model": {
+    "base_model": "openai/whisper-small",
+    "task": "transcribe",
+    "language": "bn"
+  },
+  "dataset": {
+    "name": "mozilla_common_voice_bn",
+    "train_samples": 12500,
+    "val_samples": 2500,
+    "test_samples": 2500,
+    "total_hours": 45.2
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 16,
+    "learning_rate": 1e-5,
+    "warmup_steps": 500,
+    "gradient_accumulation_steps": 2,
+    "fp16": true,
+    "max_input_length": 30,
+    "device": "cuda:0"
+  },
+  "results": {
+    "final_wer": 0.123,
+    "final_cer": 0.058,
+    "best_epoch": 8,
+    "best_wer": 0.118
+  },
+  "epoch_metrics": [
+    {"epoch": 1, "train_loss": 1.245, "val_loss": 0.892, "wer": 0.342},
+    {"epoch": 2, "train_loss": 0.834, "val_loss": 0.621, "wer": 0.256},
+    {"epoch": 3, "train_loss": 0.623, "val_loss": 0.512, "wer": 0.198},
+    {"epoch": 4, "train_loss": 0.512, "val_loss": 0.445, "wer": 0.167},
+    {"epoch": 5, "train_loss": 0.434, "val_loss": 0.398, "wer": 0.148},
+    {"epoch": 6, "train_loss": 0.378, "val_loss": 0.365, "wer": 0.134},
+    {"epoch": 7, "train_loss": 0.334, "val_loss": 0.342, "wer": 0.125},
+    {"epoch": 8, "train_loss": 0.298, "val_loss": 0.328, "wer": 0.118},
+    {"epoch": 9, "train_loss": 0.267, "val_loss": 0.334, "wer": 0.121},
+    {"epoch": 10, "train_loss": 0.245, "val_loss": 0.341, "wer": 0.123}
+  ],
+  "command_accuracy": {
+    "ধরো (grip)": 0.94,
+    "ছাড়ো (release)": 0.93,
+    "থামো (stop)": 0.97,
+    "বামে (left)": 0.91,
+    "ডানে (right)": 0.92,
+    "উপরে (up)": 0.89,
+    "নিচে (down)": 0.88,
+    "শুরু করো (start)": 0.86
+  },
+  "hardware": {
+    "gpu": "NVIDIA RTX 3060 12GB",
+    "training_time_hours": 3.5
+  }
+}
